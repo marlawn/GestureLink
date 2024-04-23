@@ -32,7 +32,6 @@ void setup() {
   esp_now_register_recv_cb(onDataReceived);
 }
 
-// Callback function to handle received data
 void onDataReceived(const uint8_t *mac_addr, const uint8_t *data, int data_len) {
   if (data_len == sizeof(struct_message)) {
     memcpy(&receivedData, data, sizeof(receivedData));
@@ -76,6 +75,5 @@ void onDataReceived(const uint8_t *mac_addr, const uint8_t *data, int data_len) 
   }
 }
 void loop() {
-  // Your main loop code here
-  // Since the receiving code is event-driven, there's no need for additional logic here.
+  
 }
